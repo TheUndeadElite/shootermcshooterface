@@ -8,6 +8,13 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+
+        if (player == null)
+        {
+            Debug.LogWarning("Player object is dead");
+            return;
+        }
+
         Vector3 scale = transform.localScale;
 
         if (player.transform.position.x > transform.position.x)

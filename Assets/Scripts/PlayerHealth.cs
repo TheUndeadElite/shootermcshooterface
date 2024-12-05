@@ -20,9 +20,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        //HealthBar.fillAmount = Mathf.Clamp(health / maxhealth, 0, 1);
+        HealthBar.fillAmount = Mathf.Clamp(health / maxhealth, 0, 1);
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
