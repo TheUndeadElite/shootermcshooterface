@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2d_PATFOMER_TILE_lower_grude_0: -765825099878630641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

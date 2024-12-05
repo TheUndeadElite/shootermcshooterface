@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2d_PATFOMER_TILE_flygansde_gundevan_0: -4823241408950917224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

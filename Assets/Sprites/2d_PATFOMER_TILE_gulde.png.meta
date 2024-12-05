@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2d_PATFOMER_TILE_gulde_0: -1096164702835770655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
