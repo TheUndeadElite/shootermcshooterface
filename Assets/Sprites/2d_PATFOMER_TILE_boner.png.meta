@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2d_PATFOMER_TILE_boner_0: -1603394464792066781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
