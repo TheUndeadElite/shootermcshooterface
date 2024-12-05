@@ -2,24 +2,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float bulletspeed;
-    GameObject bullet;
-    Transform bullethole;
+    public float speed = 20f;
+    [SerializeField] float damage = 1f;
+    public Rigidbody2D rb;
+
     void Start()
     {
-        
+        rb.linearVelocity = transform.right * speed;
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        transform.position += -transform.right * Time.deltaTime * bulletspeed;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == ("Enemy"))
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
         {
-
+            enemy.TakeDamage(damage);
         }
+        Destroy(gameObject);
     }
 }
