@@ -18,12 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die ()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-    }
-
-    void Update()
-    {
-        
     }
 }
