@@ -29,6 +29,7 @@ public class Playermovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(0, 0);
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+
             
         }
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, groundLayer);

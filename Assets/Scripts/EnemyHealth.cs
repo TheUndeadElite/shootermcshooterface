@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
 
+
         if (health <= 0)
         {
             Die();

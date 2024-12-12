@@ -5,12 +5,19 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public float knockbackForce = 5f;
+    public Rigidbody2D rb;
+
+    public Animator camAnim;
+   
 
     public AudioClip m_GunShotSounds; //So the shots don't sound the same every time
     public AudioSource m_AudioSource; //The thing to play the audio
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
         m_AudioSource = GetComponent<AudioSource>();
 
         if (m_AudioSource == null)
@@ -26,12 +33,23 @@ public class Weapon : MonoBehaviour
             Shoot();
         }
     }
+    void KnockBack ()
+    {
+        Vector2 knockbackDirection = -transform.right;
+
+        rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+    }
 
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
         PlayShootingSound();
+
+        camAnim.SetTrigger("Shake");
+
+        KnockBack();
+
     }
 
     void PlayShootingSound()
