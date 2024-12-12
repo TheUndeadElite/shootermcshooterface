@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 15
+  jumpForce: 30
   isGrounded: 0
   groundCheckRadius: 0.4
   gun: {fileID: 7664789789803409164}

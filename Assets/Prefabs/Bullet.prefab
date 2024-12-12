@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4a8a39bd68f9d459a194348ab359be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   damage: 25
   rb: {fileID: 6945828914989169994}
   spreadAngle: 5
