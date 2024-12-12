@@ -15,10 +15,13 @@ public class Playermovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 playerInput;
     SpriteRenderer SpriteRenderer;
+    public AudioClip jumpClip;
+    public AudioSource jumpSource;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SpriteRenderer = rb.GetComponent<SpriteRenderer>();
+        jumpSource = rb.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,7 +32,10 @@ public class Playermovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(0, 0);
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            
+
+            jumpSource.volume = 0.4f;
+            jumpSource.pitch = Random.Range(0.8f, 1.1f);
+            jumpSource.PlayOneShot(jumpClip);
         }
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, groundLayer);
 
