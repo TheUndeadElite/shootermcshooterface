@@ -56,6 +56,7 @@ public class Weapon : MonoBehaviour
     {
         if (m_GunShotSounds != null) // Check if the audio clip is assigned
         {
+            m_AudioSource.volume = 0.07f;
             m_AudioSource.pitch = Random.Range(0.9f, 1.1f);
             m_AudioSource.PlayOneShot(m_GunShotSounds); // Play the assigned sound
         }
