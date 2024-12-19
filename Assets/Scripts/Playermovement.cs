@@ -15,6 +15,8 @@ public class Playermovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 playerInput;
     SpriteRenderer SpriteRenderer;
+
+    public bool isShoting;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,7 +47,11 @@ public class Playermovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(playerInput.x * speed, rb.linearVelocity.y);
+        if ((!isShoting))
+        {
+            rb.linearVelocity = new Vector2(playerInput.x * speed, rb.linearVelocity.y);
+        }
+       
     }
 
     private void OnDrawGizmos()
