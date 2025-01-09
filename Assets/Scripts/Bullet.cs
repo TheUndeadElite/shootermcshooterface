@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     public int damage = 25;
     public Rigidbody2D rb;
 
+    [SerializeField] GameObject BulletParticleEffect;
+
     public float spreadAngle = 5f;
     public float pushForce = 10f;  // Force to push the enemy back
 
@@ -38,6 +40,7 @@ public class Bullet : MonoBehaviour
 
             GameManager.Instance.TriggerTimeFreeze(0.2f);
             Destroy(gameObject);  // Destroy the bullet after impact
+            Instantiate(BulletParticleEffect, transform.position, Quaternion.identity);
         }
         else
         {
