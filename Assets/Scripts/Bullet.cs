@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -10,7 +11,6 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        
         float randomSpread = Random.Range(-spreadAngle, spreadAngle);
         Vector2 direction = Quaternion.Euler(0, 0, randomSpread) * transform.right;
 
@@ -22,7 +22,9 @@ public class Bullet : MonoBehaviour
         EnemyHealth enemy = hitInfo.GetComponent<EnemyHealth>();
         if (enemy != null && hitInfo.tag == "Enemy")
         {
+
             enemy.TakeDamage(damage);
+            GameManager.Instance.TriggerTimeFreeze(0.2f);
             Destroy(gameObject);
         }
         else
@@ -30,8 +32,11 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject, 2f);
         }
     }
-    void Update()
-    {
 
+    private Quaternion CalculateImpactRotation(Vector3 targetPosition)
+    {
+        Vector3 direction = targetPosition - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return Quaternion.Euler(0f, 0f, angle);
     }
 }

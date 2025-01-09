@@ -298,6 +298,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  isShoting: 0
 --- !u!114 &6916185079030061535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,11 +329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2009539166194670843}
   bulletPrefab: {fileID: 1740623566819656883, guid: 0c8af6abd61ab5643a0aa52fa89e8d87, type: 3}
-  knockbackForce: 5
-  rb: {fileID: 7835733299124427664}
-  camAnim: {fileID: 0}
   m_GunShotSounds: {fileID: 0}
   m_AudioSource: {fileID: 0}
+  camerashake: {fileID: 0}
 --- !u!1 &5201830063487137636
 GameObject:
   m_ObjectHideFlags: 0
