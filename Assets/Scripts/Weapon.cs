@@ -6,14 +6,13 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    //muzzleflash
+    public GameObject gunpowder;
 
     public AudioClip m_GunShotSounds;
     public AudioSource m_AudioSource;
 
     public CameraShake camerashake;
-
-
-
 
     Rigidbody2D rb;
 
@@ -46,6 +45,13 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        if (gunpowder != null)
+        {
+            GameObject gunpowderInstance = Instantiate(gunpowder, firePoint.position, firePoint.rotation);
+            Destroy(gunpowderInstance, 0.1f);
+        }
+
         PlayShootingSound();
         StartCoroutine(ShootCor());
         rb.AddForce(-transform.right * 7, ForceMode2D.Impulse);
@@ -72,4 +78,6 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         playermovement.isShoting = false;
     }
+
+    
 }
