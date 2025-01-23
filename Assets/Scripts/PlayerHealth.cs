@@ -8,11 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public float maxhealth = 100;
     public Image HealthBar;
 
-    public Animator camAnim;
-
     void Start()
     {
-        camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
+
 
         health = maxhealth;
     }

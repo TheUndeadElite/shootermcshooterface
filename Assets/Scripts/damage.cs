@@ -4,10 +4,9 @@ public class damage : MonoBehaviour
 {
     public PlayerHealth pHealth;
     public float Damage;
-    public Animator camAnim;
     void Start()
     {
-        camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
+
     }
 
     void Update()
@@ -20,7 +19,6 @@ public class damage : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             pHealth.health -= Damage;
-            camAnim.SetTrigger("Shake");
         }
     }
 }
