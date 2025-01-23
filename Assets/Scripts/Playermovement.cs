@@ -17,8 +17,10 @@ public class Playermovement : MonoBehaviour
     SpriteRenderer SpriteRenderer;
     public AudioSource audiosource;
     public AudioClip jumpClip;
+    public AudioClip landingClip;
 
     public bool isShoting;
+    private bool wasGrounded;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,11 +37,19 @@ public class Playermovement : MonoBehaviour
             rb.linearVelocity = new Vector2(0, 0);
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 
-            audiosource.pitch = Random.Range(1f, 1.5f);
+            audiosource.pitch = Random.Range(0.8f, 1f);
             audiosource.PlayOneShot(jumpClip);
         }
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, groundLayer);
 
+        if (isGrounded && !wasGrounded)
+        {
+            audiosource.volume = 2f;
+            audiosource.pitch = Random.Range(1f, 1.5f);
+            audiosource.PlayOneShot(landingClip);
+        }
+
+        wasGrounded = isGrounded;
         if (playerInput.x > 0 && !facingRight)
         {
             Flip();

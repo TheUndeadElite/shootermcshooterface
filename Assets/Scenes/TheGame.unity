@@ -1308,6 +1308,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1845265257}
     - target: {fileID: 4999674057434850423, guid: fef6a3d282b823144b85ebc97cd55e67, type: 3}
+      propertyPath: landingClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 838f770fdbb10414d891a221a4a08081, type: 3}
+    - target: {fileID: 4999674057434850423, guid: fef6a3d282b823144b85ebc97cd55e67, type: 3}
       propertyPath: jumpClip.Array.size
       value: 4
       objectReference: {fileID: 0}
