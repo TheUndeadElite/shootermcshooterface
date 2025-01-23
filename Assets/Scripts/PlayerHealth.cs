@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,10 +9,9 @@ public class PlayerHealth : MonoBehaviour
     public float maxhealth = 100;
     public Image HealthBar;
 
+    damage damagescript;
     void Start()
     {
-
-
         health = maxhealth;
     }
 
@@ -19,11 +19,9 @@ public class PlayerHealth : MonoBehaviour
     {
         HealthBar.fillAmount = Mathf.Clamp(health / maxhealth, 0, 1);
 
-
-
         if (health <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(0);
         }
     }
 }

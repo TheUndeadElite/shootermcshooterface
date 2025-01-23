@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         float randomSpread = Random.Range(-spreadAngle, spreadAngle);
         Vector2 direction = Quaternion.Euler(0, 0, randomSpread) * transform.right;
 
-        rb.linearVelocity = direction * speed;  // Use 'velocity' instead of 'linearVelocity'
+        rb.linearVelocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
                 enemyRb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);  // Apply the push force
             }
 
-            GameManager.Instance.TriggerTimeFreeze(0.2f);
+            GameManager.Instance.TriggerTimeFreeze(0.1f);
             Destroy(gameObject);  // Destroy the bullet after impact
             Instantiate(BulletParticleEffect, transform.position, Quaternion.identity);
         }

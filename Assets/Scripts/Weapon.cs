@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
         PlayShootingSound();
         StartCoroutine(ShootCor());
         rb.AddForce(-transform.right * 7, ForceMode2D.Impulse);
-        StartCoroutine(camerashake.Shake(.15f, .15f));
+        StartCoroutine(camerashake.Shake(.15f, .15f)); // how long it should shake and how strong it should shake
     }
 
     void PlayShootingSound()
