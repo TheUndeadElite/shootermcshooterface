@@ -1,13 +1,16 @@
+using JetBrains.Annotations;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class damage : MonoBehaviour
 {
     public PlayerHealth pHealth;
     public float Damage;
-    public Animator camAnim;
+
+    CameraShake camShake;
     void Start()
     {
-        camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
+        camShake = FindAnyObjectByType<CameraShake>();
     }
 
     void Update()
@@ -19,8 +22,10 @@ public class damage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Collide with player");
             pHealth.health -= Damage;
-            camAnim.SetTrigger("Shake");
+            StartCoroutine(camShake.Shake(.15f, .15f));
+
         }
     }
 }

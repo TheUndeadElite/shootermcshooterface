@@ -6,21 +6,18 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public int damage = 25;
     public Rigidbody2D rb;
-    public Animator camAnim;
 
     [SerializeField] GameObject BulletParticleEffect;
 
     public float spreadAngle = 5f;
-    public float  tgb  = 10f;  // Force to push the enemy back
+    public float pushForce = 10f;  // Force to push the enemy back
 
     void Start()
     {
         float randomSpread = Random.Range(-spreadAngle, spreadAngle);
         Vector2 direction = Quaternion.Euler(0, 0, randomSpread) * transform.right;
 
-        rb.linearVelocity = direction * speed;  // Use 'velocity' instead of 'linearVelocity'
-
-        camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
+        rb.linearVelocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -30,8 +27,6 @@ public class Bullet : MonoBehaviour
         {
             // Apply damage to the enemy
             enemy.TakeDamage(damage, transform.position);
-
-            camAnim.SetTrigger("Shake");
 
             // Apply force to push the enemy back
             Rigidbody2D enemyRb = hitInfo.GetComponent<Rigidbody2D>();
@@ -43,7 +38,7 @@ public class Bullet : MonoBehaviour
                 enemyRb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);  // Apply the push force
             }
 
-            GameManager.Instance.TriggerTimeFreeze(0.05f);
+            GameManager.Instance.TriggerTimeFreeze(0.1f);
             Destroy(gameObject);  // Destroy the bullet after impact
             Instantiate(BulletParticleEffect, transform.position, Quaternion.identity);
         }
