@@ -194,7 +194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pHealth: {fileID: 0}
   Damage: 20
-  camAnim: {fileID: 0}
 --- !u!114 &3852834086663235052
 MonoBehaviour:
   m_ObjectHideFlags: 0

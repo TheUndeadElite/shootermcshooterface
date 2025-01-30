@@ -298,6 +298,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  audiosource: {fileID: 0}
+  jumpClip: {fileID: 0}
+  landingClip: {fileID: 0}
   isShoting: 0
 --- !u!114 &6916185079030061535
 MonoBehaviour:
@@ -314,7 +317,6 @@ MonoBehaviour:
   health: 0
   maxhealth: 100
   HealthBar: {fileID: 0}
-  camAnim: {fileID: 0}
 --- !u!114 &5561038866137312641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2009539166194670843}
   bulletPrefab: {fileID: 1740623566819656883, guid: 0c8af6abd61ab5643a0aa52fa89e8d87, type: 3}
+  gunpowder: {fileID: 0}
   m_GunShotSounds: {fileID: 0}
   m_AudioSource: {fileID: 0}
   camerashake: {fileID: 0}
