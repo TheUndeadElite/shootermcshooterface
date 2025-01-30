@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
+        //camAnim = GameObject.Find("Main Camera").GetComponent<Animator>();
 
         health = maxhealth;
     }

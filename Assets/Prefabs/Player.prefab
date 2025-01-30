@@ -329,6 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2009539166194670843}
   bulletPrefab: {fileID: 1740623566819656883, guid: 0c8af6abd61ab5643a0aa52fa89e8d87, type: 3}
+  gunpowder: {fileID: 0}
   m_GunShotSounds: {fileID: 0}
   m_AudioSource: {fileID: 0}
   camerashake: {fileID: 0}
