@@ -169,6 +169,7 @@ MonoBehaviour:
   speed: 30
   damage: 25
   rb: {fileID: 6945828914989169994}
+  camAnim: {fileID: 0}
   BulletParticleEffect: {fileID: 4777623602799784671, guid: ff3020c88a4545e4d8d6afa36f61e97e, type: 3}
   spreadAngle: 5
-  pushForce: 10
+  pushForce: 5
