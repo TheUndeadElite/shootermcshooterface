@@ -6,6 +6,13 @@ public class CoinScript : MonoBehaviour
     public TextMeshProUGUI scoreText; 
     private int score = 0;
 
+    public AudioSource audioSource;
+    public AudioClip coinclip;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -18,6 +18,7 @@ public class Playermovement : MonoBehaviour
     public AudioSource audiosource;
     public AudioClip jumpClip;
     public AudioClip landingClip;
+    public Animator animator;
 
     public bool isShoting;
     private bool wasGrounded;

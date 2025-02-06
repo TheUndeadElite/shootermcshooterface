@@ -217,6 +217,7 @@ MonoBehaviour:
   audiosource: {fileID: 1988458512268020369}
   jumpClip: {fileID: 8300000, guid: 574ac89cb0dee534e9128d25fcb9fd4d, type: 3}
   landingClip: {fileID: 8300000, guid: 838f770fdbb10414d891a221a4a08081, type: 3}
+  animator: {fileID: 0}
   isShoting: 0
 --- !u!114 &6916185079030061535
 MonoBehaviour:
